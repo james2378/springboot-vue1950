@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.dao.YezhuguanliDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.entity.YezhuguanliEntity" id="yezhuguanliMap">
+        <result property="xingming" column="xingming"/>
+        <result property="gongzuodanwei" column="gongzuodanwei"/>
+        <result property="xingbie" column="xingbie"/>
+        <result property="tongxindizhi" column="tongxindizhi"/>
+        <result property="jiguan" column="jiguan"/>
+        <result property="shouji" column="shouji"/>
+        <result property="shenfenzheng" column="shenfenzheng"/>
+        <result property="youxiang" column="youxiang"/>
+        <result property="ruzhuloufanghao" column="ruzhuloufanghao"/>
+        <result property="ruzhushijian" column="ruzhushijian"/>
+        <result property="qiyuejiaofangri" column="qiyuejiaofangri"/>
+        <result property="jinjilianxiren" column="jinjilianxiren"/>
+        <result property="jinjilianxidianhua" column="jinjilianxidianhua"/>
+    </resultMap>
+
+	<select id="selectListVO"
+		resultType="com.entity.vo.YezhuguanliVO" >
+		SELECT * FROM yezhuguanli  yezhuguanli         
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectVO"
+		resultType="com.entity.vo.YezhuguanliVO" >
+		SELECT  yezhuguanli.* FROM yezhuguanli  yezhuguanli
+ 		<where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+
+    <select id="selectListView"
+		resultType="com.entity.view.YezhuguanliView" >
+
+		SELECT  yezhuguanli.* FROM yezhuguanli  yezhuguanli 	        
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectView"
+		resultType="com.entity.view.YezhuguanliView" >
+		SELECT * FROM yezhuguanli  yezhuguanli <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	
+</mapper>
